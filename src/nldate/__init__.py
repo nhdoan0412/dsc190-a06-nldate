@@ -112,7 +112,7 @@ def _absolute(text: str, reference: date) -> date | None:
     """Recognize ISO, US numeric, and English month-name dates."""
     cleaned = re.sub(r"(?<=\d)(?:st|nd|rd|th)\b", "", text)
     cleaned = re.sub(r"\bsept\b", "sep", cleaned)
-    cleaned = re.sub(r"[,]+", " ", cleaned)
+    cleaned = re.sub(r"[,.]+", " ", cleaned)
     cleaned = " ".join(cleaned.split())
     full_formats = (
         "%Y-%m-%d",

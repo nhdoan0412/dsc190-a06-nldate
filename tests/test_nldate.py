@@ -60,3 +60,7 @@ def test_months_are_clamped_at_month_end() -> None:
 
 def test_leap_year() -> None:
     assert parse("February 29, 2024", BASE) == date(2024, 2, 29)
+
+
+def test_abbreviated_month_with_period() -> None:
+    assert parse("Dec. 1, 2025") == date(2025, 12, 1)
